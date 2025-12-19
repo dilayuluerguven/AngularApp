@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ExampleComponent } from './pages/example/example.component';
 import { Example2Component } from './pages/example2/example2.component';
 import { Example3Component } from './pages/example3/example3.component';
+import { EventclickComponent } from './pages/eventclick/eventclick.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExampleComponent,
     Example2Component,
-    Example3Component
+    Example3Component,
+    EventclickComponent,
   ],
   imports: [
     BrowserModule,
