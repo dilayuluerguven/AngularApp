@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NgforComponent } from './directives/ngfor/ngfor.component';
+import { NgIfComponent } from './directives/ng-if/ng-if.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NgforComponent,
+    NgIfComponent,
   ],
   imports: [
     BrowserModule,
