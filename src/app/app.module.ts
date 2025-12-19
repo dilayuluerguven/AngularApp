@@ -7,6 +7,7 @@ import { ExampleComponent } from './pages/example/example.component';
 import { Example2Component } from './pages/example2/example2.component';
 import { Example3Component } from './pages/example3/example3.component';
 import { EventclickComponent } from './pages/eventclick/eventclick.component';
+import { DatapassInputComponent } from './pages/datapass-input/datapass-input.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { EventclickComponent } from './pages/eventclick/eventclick.component';
     Example2Component,
     Example3Component,
     EventclickComponent,
+    DatapassInputComponent,
   ],
   imports: [
     BrowserModule,

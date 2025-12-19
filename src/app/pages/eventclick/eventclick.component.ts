@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventclickComponent implements OnInit {
 
-  count:number=1;
-  constructor() { }
+  count:number;
+  constructor() { 
+    this.count=1;
+    console.log("contructor called");
+  }
 
   ngOnInit(): void {
+    console.log("ngOnInit called");
   }
 
   WritetoConsole():void{
