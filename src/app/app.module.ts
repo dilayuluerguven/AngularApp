@@ -8,6 +8,7 @@ import { NgforComponent } from './directives/ngfor/ngfor.component';
 import { NgIfComponent } from './directives/ng-if/ng-if.component';
 import { NgSwitchComponent } from './directives/ng-switch/ng-switch.component';
 import { NgClassComponent } from './directives/ng-class/ng-class.component';
+import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { NgClassComponent } from './directives/ng-class/ng-class.component';
     NgIfComponent,
     NgSwitchComponent,
     NgClassComponent,
+    NgStyleComponent,
   ],
   imports: [
     BrowserModule,
