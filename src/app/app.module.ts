@@ -8,6 +8,8 @@ import { Example2Component } from './pages/example2/example2.component';
 import { Example3Component } from './pages/example3/example3.component';
 import { EventclickComponent } from './pages/eventclick/eventclick.component';
 import { DatapassInputComponent } from './pages/datapass-input/datapass-input.component';
+import { TwoWayBindingComponent } from './pages/two-way-binding/two-way-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { DatapassInputComponent } from './pages/datapass-input/datapass-input.co
     Example3Component,
     EventclickComponent,
     DatapassInputComponent,
+    TwoWayBindingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
