@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { NgforComponent } from './directives/ngfor/ngfor.component';
 import { NgIfComponent } from './directives/ng-if/ng-if.component';
 import { NgSwitchComponent } from './directives/ng-switch/ng-switch.component';
+import { NgClassComponent } from './directives/ng-class/ng-class.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { NgSwitchComponent } from './directives/ng-switch/ng-switch.component';
     NgforComponent,
     NgIfComponent,
     NgSwitchComponent,
+    NgClassComponent,
   ],
   imports: [
     BrowserModule,
