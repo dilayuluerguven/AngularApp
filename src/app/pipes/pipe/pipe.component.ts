@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeComponent implements OnInit {
 
+  mydate=new Date();
   person1:Person={firstName:'John', lastName:'Doe', age:30};
   person2:any={first:'Jane', last:'Smith', age:25};
   constructor() { }
