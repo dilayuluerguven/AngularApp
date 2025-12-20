@@ -25,6 +25,11 @@
 <p>{{5.123456789 | number}} </p>
 <p>{{5 | number:'3.1-5'}}</p>//3(noktadan önceki kısım) .1(noktadan sonraki min kısım) -5(maximum 5 basamak)
 
+<h1>SlicePipe</h1>
+<p>{{'angular' | slice:0:2}}</p>//0 dahil 2 hariç
+<p>{{'angular' | slice:2:4}}</p>
+<p>{{[0,1,2,3,4,5] | slice:2:4}}</p>
+
 
 
 
