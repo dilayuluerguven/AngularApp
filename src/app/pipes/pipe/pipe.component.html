@@ -2,11 +2,13 @@
 <p>{{person1.firstName}} {{person1.lastName}} is {{person1.age}} years old.</p>
 <p>{{person2 | json}}</p>
 <p>{{person1 | json}}</p>
+
 <h1>UpperCasePipe / LowerCasePipe</h1>
 <p>{{'angular' | uppercase}}</p>
 <p>{{'angular' | lowercase}}</p>
 <p>{{'angular' | titlecase}}</p>
 <p>{{person1.firstName | titlecase}} {{person1.lastName | uppercase}}</p>
+
 <h1>DatePipe</h1>
 <h3>{{mydate | date:'dd/MM/yyyy' }}</h3>
 <h3>{{mydate | date:'dd-MM-yyyy' }}</h3>
@@ -14,12 +16,14 @@
 <h3>{{mydate | date:'shortTime' }}</h3>
 <h3>{{mydate | date:'fullDate' }}</h3>
 <h3>{{mydate | date:'medium' }}</h3>
+
 <h1>CurrencyPipe</h1>
 <p>{{price | currency}}</p>
 <p>{{price | currency:'EUR'}}</p>
 <p>{{price | currency:'GBP'}}</p>
 <p>{{price | currency:'TRY'}}</p>
 <p>{{price | currency:'USD':'code'}}</p>
+
 <h1>DecimalPipe</h1>
 <p>{{5.123456789 | number:'1.0-5'}} </p>
 <p>{{5.123456789 | number}} </p>
@@ -29,6 +33,10 @@
 <p>{{'angular' | slice:0:2}}</p>//0 dahil 2 hariç
 <p>{{'angular' | slice:2:4}}</p>
 <p>{{[0,1,2,3,4,5] | slice:2:4}}</p>
+
+<h1>PercentPipe</h1>
+<p>{{0.123456789 | percent}}</p>
+<p>{{0.123456789 | percent:'1.0-3'}}</p>
 
 
 
