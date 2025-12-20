@@ -12,6 +12,7 @@ import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { NgModelComponent } from './directives/ng-model/ng-model.component';
 import { CustomDirective } from './directives/custom.directive';
 import { PipeComponent } from './pipes/pipe/pipe.component';
+import { UpperPipe } from './pipes/upper.pipe';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PipeComponent } from './pipes/pipe/pipe.component';
     NgModelComponent,
     CustomDirective,
     PipeComponent,
+    UpperPipe,
   ],
   imports: [
     BrowserModule,
