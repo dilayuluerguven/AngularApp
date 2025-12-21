@@ -1,17 +1,109 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
+    <h1>Login type1</h1>
     <form [formGroup]="loginForm" (ngSubmit)="signIn()">
       <div class="mb-3">
         <label for="userName" class="form-label">Username:</label>
-        <input class="form-control" type="text" formControlName="userName" />
+        <input class="form-control" type="text" formControlName="userName" [ngClass]="{
+            invalidRed: isValid('userName'),
+            validGreen: isSuccessValid('userName')
+          }" />
+        <div
+          class="alert alert-danger m-3"
+          *ngIf="isInValidMessageShow('userName')"
+        >
+          <small *ngIf="loginForm.get('userName')?.errors?.['required']"
+            >Kullanıcı adı alanı zorunludur.</small
+          >
+        </div>
+        <div class="alert alert-info">
+          <ul>
+            <li>valid:{{ loginForm.get("userName")?.valid }}</li>
+            <li>invalid:{{ loginForm.get("userName")?.invalid }}</li>
+            <li>errors:{{ loginForm.get("userName")?.errors | json }}</li>
+            <li>pristine:{{ loginForm.get("userName")?.pristine }}</li>
+            <li>dirty:{{ loginForm.get("userName")?.dirty }}</li>
+            <li>touched:{{ loginForm.get("userName")?.touched }}</li>
+            <li>untouched:{{ loginForm.get("userName")?.untouched }}</li>
+            <li>value:{{ loginForm.get("userName")?.value }}</li>
+          </ul>
+        </div>
         <div class="mb-3">
           <label class="form-label" for="password">Password:</label>
           <input
             class="form-control"
             type="password"
             formControlName="password"
+            [ngClass]="{
+            invalidRed: isValid('password'),
+            validGreen: isSuccessValid('password')
+          }"
           />
         </div>
+      </div>
+      <div *ngIf="isInValidMessageShow('password')">
+        <small
+          class="alert alert-danger m"
+          *ngIf="loginForm.get('password')?.errors?.['required']"
+          >Parola alanı zorunludur.</small
+        >
+        <small
+          class="alert alert-danger"
+          *ngIf="loginForm.get('password')?.errors?.['minlength']"
+          >Parola alanı en az 4 karakter olmalıdır.</small
+        >
+      </div>
+      <div class="alert alert-info m-3">
+        <ul>
+          <li>valid:{{ loginForm.get("password")?.valid }}</li>
+          <li>invalid:{{ loginForm.get("password")?.invalid }}</li>
+          <li>errors:{{ loginForm.get("password")?.errors | json }}</li>
+          <li>pristine:{{ loginForm.get("password")?.pristine }}</li>
+          <li>dirty:{{ loginForm.get("password")?.dirty }}</li>
+          <li>touched:{{ loginForm.get("password")?.touched }}</li>
+          <li>untouched:{{ loginForm.get("password")?.untouched }}</li>
+          <li>value:{{ loginForm.get("password")?.value }}</li>
+        </ul>
+      </div>
+      <label class="form-label" for="country">Country:</label>
+      <select class="form-select mb-3" formControlName="country">
+        <option value="">Seçiniz</option>
+        <option *ngFor="let item of countryMenu" [value]="item.value">
+          {{ item.text }}
+        </option>
+      </select>
+      <div class="alert alert-info m-3">
+        <ul>
+          <li>valid:{{ loginForm.get("country")?.valid }}</li>
+          <li>invalid:{{ loginForm.get("country")?.invalid }}</li>
+          <li>errors:{{ loginForm.get("country")?.errors | json }}</li>
+          <li>pristine:{{ loginForm.get("country")?.pristine }}</li>
+          <li>dirty:{{ loginForm.get("country")?.dirty }}</li>
+          <li>touched:{{ loginForm.get("country")?.touched }}</li>
+          <li>untouched:{{ loginForm.get("country")?.untouched }}</li>
+          <li>value:{{ loginForm.get("country")?.value }}</li>
+        </ul>
+      </div>
+      <div *ngFor="let item of genderMenu">
+        <input
+          class="form-check-input"
+          formControlName="gender"
+          type="radio"
+          [value]="item.value"
+          
+        />
+        {{ item.text }}
+      </div>
+      
+      <div class="form-check">
+        <label class="form-check-label mb-3" for="rememberMe"
+          >Beni hatırla
+        </label>
+        <input
+          class="form-check-input"
+          type="checkbox"
+          formControlName="rememberMe"
+        />
       </div>
       <button class="btn btn-primary" type="submit">Giriş</button>
     </form>

@@ -1,10 +1,22 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
-    <h1>Login Form</h1>
+    <h1>Login type2</h1>
     <form [formGroup]="loginForm" (ngSubmit)="signIn()">
       <div class="mb-3">
         <label for="userName" class="form-label">Username:</label>
         <input class="form-control" type="text" formControlName="userName" />
+           <div class="alert alert-info">
+          <ul>
+            <li>valid:{{ loginForm.get("userName")?.valid }}</li>
+            <li>invalid:{{ loginForm.get("userName")?.invalid }}</li>
+            <li>errors:{{ loginForm.get("userName")?.errors | json }}</li>
+            <li>pristine:{{ loginForm.get("userName")?.pristine }}</li>
+            <li>dirty:{{ loginForm.get("userName")?.dirty }}</li>
+            <li>touched:{{ loginForm.get("userName")?.touched }}</li>
+            <li>untouched:{{ loginForm.get("userName")?.untouched }}</li>
+            <li>value:{{ loginForm.get("userName")?.value }}</li>
+          </ul>
+        </div>
         <div class="mb-3">
           <label class="form-label" for="password">Password:</label>
           <input
@@ -13,6 +25,41 @@
             formControlName="password"
           />
         </div>
+      </div>
+      <div class="alert alert-info">
+          <ul>
+            <li>valid:{{ loginForm.get("password")?.valid }}</li>
+            <li>invalid:{{ loginForm.get("password")?.invalid }}</li>
+            <li>errors:{{ loginForm.get("password")?.errors | json }}</li>
+            <li>pristine:{{ loginForm.get("password")?.pristine }}</li>
+            <li>dirty:{{ loginForm.get("password")?.dirty }}</li>
+            <li>touched:{{ loginForm.get("password")?.touched }}</li>
+            <li>untouched:{{ loginForm.get("password")?.untouched }}</li>
+            <li>value:{{ loginForm.get("password")?.value }}</li>
+          </ul>
+        </div>
+      <label class="form-label" for="country">Country:</label>
+      <select class="form-select mb-3" formControlName="country">
+        <option *ngFor="let item of countryMenu" [value]="item.value">
+          {{ item.text }}
+        </option>
+      </select>
+         <div *ngFor="let item of genderMenu">
+        <input
+          class="form-check-input"
+          formControlName="gender"
+          type="radio"
+          [value]="item.value"
+        />
+        {{ item.text }}
+      </div>
+      <div class="form-check mb-3">
+        <label class="form-check-label" for="rememberMe">Beni hatırla </label>
+        <input
+          class="form-check-input"
+          type="checkbox"
+          formControlName="rememberMe"
+        />
       </div>
       <button class="btn btn-primary" type="submit">Giriş</button>
     </form>
