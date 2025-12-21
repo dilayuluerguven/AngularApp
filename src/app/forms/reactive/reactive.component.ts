@@ -27,6 +27,7 @@ export class ReactiveComponent implements OnInit {
       rememberMe: false,
       country: fb.control('',Validators.required),
       gender: [1],
+      birthday: fb.control('',[Validators.required,this.isOldEnough]),
     });
   }
   ngOnInit(): void {
@@ -51,5 +52,12 @@ export class ReactiveComponent implements OnInit {
     isSuccessValid(formControlName: string) {
       let formControl = this.loginForm.get(formControlName);
       return formControl?.valid && (formControl?.dirty || formControl?.touched);
+    }
+
+    isOldEnough=(control:FormControl):{isYoung:true}| null =>
+    {
+      const birthday:Date=new Date(control.value);
+      birthday.setFullYear(birthday.getFullYear()+18); 
+      return birthday>new Date() ? null : {isYoung:true};
     }
 }

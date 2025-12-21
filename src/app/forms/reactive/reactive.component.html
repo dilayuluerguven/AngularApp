@@ -94,7 +94,22 @@
         />
         {{ item.text }}
       </div>
-      
+      <div class="mb-3">
+        <label  class="form-label" for="birthday"></label>
+        <input class="form-control" type="date" name="birthday" formControlName="birthday" />
+      </div>
+       <div class="alert alert-info m-3">
+        <ul>
+          <li>valid:{{ loginForm.get("birthday")?.valid }}</li>
+          <li>invalid:{{ loginForm.get("birthday")?.invalid }}</li>
+          <li>errors:{{ loginForm.get("birthday")?.errors | json }}</li>
+          <li>pristine:{{ loginForm.get("birthday")?.pristine }}</li>
+          <li>dirty:{{ loginForm.get("birthday")?.dirty }}</li>
+          <li>touched:{{ loginForm.get("birthday")?.touched }}</li>
+          <li>untouched:{{ loginForm.get("birthday")?.untouched }}</li>
+          <li>value:{{ loginForm.get("birthday")?.value }}</li>
+        </ul>
+      </div>
       <div class="form-check">
         <label class="form-check-label mb-3" for="rememberMe"
           >Beni hatırla
@@ -105,7 +120,7 @@
           formControlName="rememberMe"
         />
       </div>
-      <button class="btn btn-primary" type="submit">Giriş</button>
+      <button  [disabled]="!loginForm.valid" class="btn btn-primary" type="submit">Giriş</button>
     </form>
   </div>
 </div>
