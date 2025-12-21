@@ -1,0 +1,102 @@
+//interface üzerinden
+<form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
+  <label for="userName">Username:</label>
+  <input
+    #userNameInput="ngModel"
+    type="text"
+    name="userName"
+    [ngModel]="loginModel.userName"
+  />
+  <br />
+  <div style="border: 2px solid red; padding: 10px">
+    <ul>
+      <li>valid:{{ userNameInput.valid }}</li>
+      <li>invalid:{{ userNameInput.invalid }}</li>
+      <li>errors:{{ userNameInput.errors | json }}</li>
+      <li>pristine:{{ userNameInput.pristine }}</li>
+      <li>dirty:{{ userNameInput.dirty }}</li>
+      <li>touched:{{ userNameInput.touched }}</li>
+      <li>untouched:{{ userNameInput.untouched }}</li>
+      <li>value:{{ userNameInput.value }}</li>
+    </ul>
+  </div>
+  <br />
+  <label for="password">Password:</label>
+  <input
+    #passwordInput="ngModel"
+    type="password"
+    name="password"
+    [ngModel]="loginModel.password"
+  />
+  <br />
+  <div style="border: 2px solid red; padding: 10px">
+    <ul>
+      <li>valid:{{ passwordInput.valid }}</li>
+      <li>invalid:{{ passwordInput.invalid }}</li>
+      <li>errors:{{ passwordInput.errors | json }}</li>
+      <li>pristine:{{ passwordInput.pristine }}</li>
+      <li>dirty:{{ passwordInput.dirty }}</li>
+      <li>touched:{{ passwordInput.touched }}</li>
+      <li>untouched:{{ passwordInput.untouched }}</li>
+      <li>value:{{ passwordInput.value }}</li>
+    </ul>
+  </div>
+  <label for="country">Country:</label>
+  <select
+    (ngModelChange)="countryChange($event)"
+    name="country"
+    [ngModel]="loginModel.country"
+  >
+    <option *ngFor="let item of countryMenu" value="{{ item.value }}">
+      {{ item.text }}
+    </option>
+  </select>
+  <br />
+  <div *ngFor="let item of genderMenu">
+    <input
+      (ngModelChange)="genderChange($event)"
+      [ngModel]="loginModel.gender"
+      type="radio"
+      name="gender"
+      value="{{ item.value }}"
+    />{{ item.text }}
+  </div>
+  <!-- Manuel Radio Button 
+  <input [ngModel]="loginModel.gender" type="radio" name="gender" value="1" checked >Erkek
+  <input [ngModel]="loginModel.gender" type="radio" name="gender" value="2" >Kadın 
+  <br />
+   Change event example
+  <select
+    #myselect
+    (change)="onChange(myselect.value)"
+    name="selectManuel"
+    id=""
+  >
+    <option value="1">select1</option>
+    <option value="2">select2</option>
+    <option value="3">select3</option>
+  </select> --->
+
+  <label for="rememberMe">Remember Me: </label>
+  <input type="checkbox" name="rememberMe" [ngModel]="loginModel.rememberMe" />
+  <button type="submit">Giriş</button>
+</form>
+
+<!-- <br>
+//Class üzerinden 
+<form #saveForm="ngForm" (ngSubmit)="save(saveForm)">
+  <label for="userName">Username:</label>
+  <input type="text" name="userName" [ngModel]="loginModel2.userName" />
+  <br />
+  <label for="password">Password:</label>
+  <input type="password" name="password" [ngModel]="loginModel2.password" />
+  <br />
+  <br />
+  <label for="rememberMe">Remember Me: </label>
+  <input
+    type="checkbox"
+    name="rememberMe"
+    [ngModel]="loginModel2.rememberMe"
+  />
+  <button type="submit">Giriş</button>
+</form> -->

@@ -13,6 +13,7 @@ import { NgModelComponent } from './directives/ng-model/ng-model.component';
 import { CustomDirective } from './directives/custom.directive';
 import { PipeComponent } from './pipes/pipe/pipe.component';
 import { UpperPipe } from './pipes/upper.pipe';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { UpperPipe } from './pipes/upper.pipe';
     CustomDirective,
     PipeComponent,
     UpperPipe,
+    TemplateDrivenComponent,
   ],
   imports: [
     BrowserModule,
