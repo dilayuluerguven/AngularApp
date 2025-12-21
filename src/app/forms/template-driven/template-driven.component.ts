@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Form, FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven',
@@ -16,9 +16,9 @@ export class TemplateDrivenComponent implements OnInit {
     { text: 'Fransa', value: 3 },
     { text: 'Hollanda', value: 4 },
   ];
-  genderMenu:genderRadioMenu[]=[
-    {text:'Erkek',value:1},
-    {text:'Kadın',value:2},
+  genderMenu: genderRadioMenu[] = [
+    { text: 'Erkek', value: 1 },
+    { text: 'Kadın', value: 2 },
   ];
   constructor() {
     this.loginModel = {
@@ -38,18 +38,25 @@ export class TemplateDrivenComponent implements OnInit {
   countryChange(value: any) {
     console.log(value);
   }
-  genderChange(value:any)
-  {
+  genderChange(value: any) {
     console.log(value);
   }
-  onChange(value:any)
-  {
+  onChange(value: any) {
     console.log(value);
+  }
+  isValid(model: FormControl): boolean {
+    if (!(model.invalid && (model.dirty || model.touched))) return false;
+    if (model.errors?.['required']) return true;
+    if (model.errors?.['minlength']) return true;
+    return false;
+  }
+  isSuccessValid(model: FormControl): boolean {
+    return model.valid && (model.dirty || model.touched);
   }
 }
-interface genderRadioMenu{
-  text:string,
-  value:number
+interface genderRadioMenu {
+  text: string;
+  value: number;
 }
 interface CountryDropMenu {
   text: string;
@@ -61,9 +68,8 @@ interface loginModel {
   password: string;
   rememberMe?: boolean;
   country: number;
-  gender:number;
+  gender: number;
 }
-
 
 class loginModelC {
   userName?: string;
