@@ -1,3 +1,4 @@
+import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,9 +12,16 @@ export class FirstPageComponent implements OnInit {
 
   ngOnInit(): void {
     let page=this.activatedRoute.snapshot.queryParamMap.get('page');
-    console.log('Current Page:',page);
     let pageSize=this.activatedRoute.snapshot.queryParamMap.get('pageSize');
-    console.log('Page Size:',pageSize);
+    console.log(`Page: ${page}, Page Size: ${pageSize}`);
+    console.log('first page component initialized');
+    this.activatedRoute.queryParamMap.subscribe(x=>{
+      console.log('Query Params Changed:',x);
+      console.log(`Dynamic Page: ${x.get('page')}, Page Size: ${x.get('pageSize')}`);
+    })
+  }
+  changeQueryParams(){
+    this.route.navigate(['first-page'],{queryParams:{page:10,pageSize:20}});
   }
   goSecondPage() {
     // this.route.navigateByUrl('/second-page');

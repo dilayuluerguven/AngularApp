@@ -22,6 +22,8 @@ import { HelperService } from './services/helper.service';
 import { Helper2Service } from './services/helper2.service';
 import { backend_url } from './consts';
 import { PageModule } from './pages/page.module';
+import { SayfaModule } from './projects/pages/sayfa.module';
+import { AdminModule } from './projects/admin-pages/admin.module';
 
 let isProd: boolean = false;
 @NgModule({
@@ -42,7 +44,7 @@ let isProd: boolean = false;
     FirstComponent,
     SecondComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,PageModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,PageModule,SayfaModule,AdminModule],
   providers: [
     {
       provide: HelperService,
