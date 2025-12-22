@@ -16,6 +16,8 @@ import { UpperPipe } from './pipes/upper.pipe';
 import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 import { ReactiveComponent } from './forms/reactive/reactive.component';
 import { ReactiveType2Component } from './forms/reactive-type2/reactive-type2.component';
+import { FirstComponent } from './components/first/first.component';
+import { SecondComponent } from './components/second/second.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { ReactiveType2Component } from './forms/reactive-type2/reactive-type2.co
     TemplateDrivenComponent,
     ReactiveComponent,
     ReactiveType2Component,
+    FirstComponent,
+    SecondComponent,
   ],
   imports: [
     BrowserModule,

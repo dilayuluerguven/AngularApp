@@ -27,7 +27,7 @@ export class ReactiveComponent implements OnInit {
       rememberMe: false,
       country: fb.control('',Validators.required),
       gender: [1],
-      birthday: fb.control('',[Validators.required,this.isOldEnough]),
+      birthday:fb.control('',[Validators.required,this.isOldEnough]),
     });
   }
   ngOnInit(): void {
