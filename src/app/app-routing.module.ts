@@ -7,20 +7,30 @@ import { IletisimComponent } from './projects/pages/iletisim/iletisim.component'
 import { adminHomeComponent } from './projects/admin-pages/home/home.component';
 import { MemberComponent } from './projects/admin-pages/member/member.component';
 import { RaporlarComponent } from './projects/admin-pages/raporlar/raporlar.component';
+import { LayoutComponent } from './projects/pages/layout/layout.component';
+import { AdminLayoutComponent } from './projects/admin-pages/admin-layout/admin-layout.component';
 
 const routes: Routes = [
-  // {path:'',redirectTo:'home',pathMatch:'full'},
-  // {path:'home',component:HomePageComponent},
-  // {path:'first-page',component:FirstPageComponent},
-  // {path:'second-page/:id',component:SecondPageComponent},
-  { path: 'anasayfa', component: AnasayfaComponent },
-  { path: 'hakkimizda', component: HakkimizdaComponent },
-  { path: 'galeri', component: GaleriComponent },
-  { path: 'iletisim', component: IletisimComponent },
-  {path:'admin',component:adminHomeComponent,children:[
-    {path:"uyeler",component:MemberComponent},
-    {path:"raporlar",component:RaporlarComponent}
-  ]}
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: '', component: AnasayfaComponent },
+      { path: 'hakkimizda', component: HakkimizdaComponent },
+      { path: 'galeri', component: GaleriComponent },
+      { path: 'iletisim', component: IletisimComponent },
+    ],
+  },
+
+  {
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
+      { path: '', component: adminHomeComponent },
+      { path: 'uyeler', component: MemberComponent },
+      { path: 'raporlar', component: RaporlarComponent },
+    ],
+  },
 ];
 
 @NgModule({

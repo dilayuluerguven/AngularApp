@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="/admin" [ngClass]="{'current-active':isHomePage()}" class="nav-link active" aria-current="page" >Anasayfa</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="uyeler" routerLinkActive="current-active" class="nav-link" >Üyeler</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="raporlar"  routerLinkActive="current-active" class="nav-link" >Raporlar</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" >Normal sayfaya dön</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
