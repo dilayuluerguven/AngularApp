@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:HomePageComponent},
   {path:'first-page',component:FirstPageComponent},
-  {path:'second-page',component:SecondPageComponent},
+  {path:'second-page/:id',component:SecondPageComponent},
 
 ];
 

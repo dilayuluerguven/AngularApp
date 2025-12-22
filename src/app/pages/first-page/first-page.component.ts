@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-first-page',
@@ -7,12 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./first-page.component.css'],
 })
 export class FirstPageComponent implements OnInit {
-  constructor(private route: Router) {}
+  constructor(private route: Router,private activatedRoute:ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let page=this.activatedRoute.snapshot.queryParamMap.get('page');
+    console.log('Current Page:',page);
+    let pageSize=this.activatedRoute.snapshot.queryParamMap.get('pageSize');
+    console.log('Page Size:',pageSize);
+  }
   goSecondPage() {
-    this.route.navigateByUrl('/second-page');
-    // this.route.navigateByUrl(`/second-page/${5}`);
+    // this.route.navigateByUrl('/second-page');
+     this.route.navigateByUrl(`/second-page/${5}`);
     // this.route.navigate(['/second-page',5]);//parametre yollamak icin
   }
 }

@@ -1,7 +1,9 @@
 <ul>
     <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/first-page">First Page</a></li>
-    <li><a routerLink="/second-page">Second Page</a></li>
+    <li><a routerLink="/first-page" [queryParams]="{page: 2,pageSize:1}">First Page</a></li>
+    <li><a routerLink="/second-page/5">Second Page</a></li>
+    <li><a [routerLink]="['/second-page', 2]">Second Page</a></li>
+
 </ul>
 <hr>
 <h2>Sayfalar</h2>
