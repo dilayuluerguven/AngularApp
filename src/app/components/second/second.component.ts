@@ -13,6 +13,7 @@ export class SecondComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.helperService.upper("Angular(Second Component)"));
     this.meta.addTag({name:"author",content:"Fatma Karaman"});
+
   }
 
   show(){

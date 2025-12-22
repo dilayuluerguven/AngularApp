@@ -12,4 +12,8 @@ export class HelperService {
   {
     return text.toUpperCase();
   }
+  sendSms(text:string,phone:string)
+  {
+    console.log(`Gerçek sms gönderildi`);
+  }
 }

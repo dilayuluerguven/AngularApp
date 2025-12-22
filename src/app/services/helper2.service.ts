@@ -12,4 +12,8 @@ title:string="Title";
   {
     return text.toUpperCase()+"daha hızlı";
   }
+   sendSms(text:string,phone:string)
+  {
+    console.log(`sahte sms gönderildi`);
+  }
 }

@@ -20,8 +20,9 @@ import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
 import { HelperService } from './services/helper.service';
 import { Helper2Service } from './services/helper2.service';
+import { backend_url } from './consts';
 
-
+let isProd: boolean = false;
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,13 +41,14 @@ import { Helper2Service } from './services/helper2.service';
     FirstComponent,
     SecondComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  providers: [
+    {
+      provide: HelperService,
+      useClass: isProd ? HelperService : Helper2Service,
+    },
+    { provide: backend_url, useValue: 'http://www.api.com' },
   ],
-  providers: [{provide:HelperService,useClass:Helper2Service}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
