@@ -24,6 +24,7 @@ import { backend_url } from './consts';
 import { PageModule } from './pages/page.module';
 import { SayfaModule } from './projects/pages/sayfa.module';
 import { AdminModule } from './projects/admin-pages/admin.module';
+import { OrnekComponent } from './ornek/ornek.component';
 
 let isProd: boolean = false;
 @NgModule({
@@ -43,6 +44,7 @@ let isProd: boolean = false;
     ReactiveType2Component,
     FirstComponent,
     SecondComponent,
+    OrnekComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,PageModule,SayfaModule,AdminModule],
   providers: [
