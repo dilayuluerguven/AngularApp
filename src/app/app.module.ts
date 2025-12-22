@@ -21,6 +21,7 @@ import { SecondComponent } from './components/second/second.component';
 import { HelperService } from './services/helper.service';
 import { Helper2Service } from './services/helper2.service';
 import { backend_url } from './consts';
+import { PageModule } from './pages/page.module';
 
 let isProd: boolean = false;
 @NgModule({
@@ -41,7 +42,7 @@ let isProd: boolean = false;
     FirstComponent,
     SecondComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,PageModule],
   providers: [
     {
       provide: HelperService,
