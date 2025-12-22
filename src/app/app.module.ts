@@ -18,6 +18,8 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
 import { ReactiveType2Component } from './forms/reactive-type2/reactive-type2.component';
 import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
+import { HelperService } from './services/helper.service';
+import { Helper2Service } from './services/helper2.service';
 
 
 @NgModule({
@@ -44,7 +46,7 @@ import { SecondComponent } from './components/second/second.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide:HelperService,useClass:Helper2Service}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
