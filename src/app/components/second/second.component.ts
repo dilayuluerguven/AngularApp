@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
@@ -8,9 +9,10 @@ import { HelperService } from 'src/app/services/helper.service';
 })
 export class SecondComponent implements OnInit {
   
-  constructor(private helperService:HelperService) { }
+  constructor(private helperService:HelperService,private meta:Meta) { }
   ngOnInit(): void {
     console.log(this.helperService.upper("Angular(Second Component)"));
+    this.meta.addTag({name:"author",content:"Fatma Karaman"});
   }
 
   show(){
