@@ -19,6 +19,8 @@ import {
 } from 'rxjs';
 import { ExampleServicesService } from './example-services.service';
 import { HttpClient } from '@angular/common/http';
+import { User2 } from './models/user2';
+import { User3 } from './models/user3';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +28,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  user:User2 | undefined;
+  user2:User3 |undefined;
   title = 'angularapp';
   constructor(
     private pageservice: PageserviceService,
@@ -35,7 +39,11 @@ export class AppComponent implements OnInit {
     this.pageservice.write();
   }
   ngOnInit(): void {
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(x=>console.log(x));
+    this.http.get<User3>('https://jsonplaceholder.typicode.com/todos/1').subscribe(x=>
+      {
+        // this.user=x;
+        this.user2=x;
+      });
     
   }
   save(input: string) {
