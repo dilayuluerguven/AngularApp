@@ -33,14 +33,15 @@ export class AppComponent implements OnInit {
   // user:User2 | undefined;
   // user2:User3 |undefined;
   isLoading:boolean=true;
-  postList: Post[] = [];
+  // postList: Post[] = [];
+  postList:string[]=[];
   title = 'angularapp';
   constructor(
     private jsonplaceholder: JsonplaceholderService
   ) // private example: ExampleServicesService
   {}
   ngOnInit(): void {
-    this.jsonplaceholder.getPostList().subscribe((x) => {
+    this.jsonplaceholder.getPostList(2,5).subscribe((x) => {
       // this.user=x;
       // this.user2=x;
       this.postList = x;

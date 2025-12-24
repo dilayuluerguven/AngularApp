@@ -6,9 +6,12 @@
     </div>
   </div>
 </div>
-<div class="alert alert-info" *ngFor="let post of postList">
+<!-- <div class="alert alert-info" *ngFor="let post of postList">
   id: {{ post.id }} userId: {{ post.userId }} Title: {{ post.title }} body:
   {{ post.body }}
+</div> -->
+<div class="alert alert-info" *ngFor="let post of postList">
+  post: {{ post }} 
 </div>
 <hr>
 <app-exa></app-exa>
