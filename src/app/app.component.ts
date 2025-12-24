@@ -21,6 +21,7 @@ import { ExampleServicesService } from './example-services.service';
 import { HttpClient } from '@angular/common/http';
 import { User2 } from './models/user2';
 import { User3 } from './models/user3';
+import { Post } from './models/post';
 
 @Component({
   selector: 'app-root',
@@ -28,8 +29,9 @@ import { User3 } from './models/user3';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  user:User2 | undefined;
-  user2:User3 |undefined;
+  // user:User2 | undefined;
+  // user2:User3 |undefined;
+  postList:Post[]=[];
   title = 'angularapp';
   constructor(
     private pageservice: PageserviceService,
@@ -39,10 +41,11 @@ export class AppComponent implements OnInit {
     this.pageservice.write();
   }
   ngOnInit(): void {
-    this.http.get<User3>('https://jsonplaceholder.typicode.com/todos/1').subscribe(x=>
+    this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts').subscribe(x=>
       {
         // this.user=x;
-        this.user2=x;
+        // this.user2=x;
+        this.postList=x;
       });
     
   }
