@@ -1,5 +1,15 @@
-<h1>Ana component</h1> 
-<div *ngFor="let post of postList">id: {{post.id}} userId: {{post.userId}} Title: {{post.title}} body: {{post.body}}</div>
+<h1>Ana component</h1>
+<div *ngIf="isLoading">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+<div class="alert alert-info" *ngFor="let post of postList">
+  id: {{ post.id }} userId: {{ post.userId }} Title: {{ post.title }} body:
+  {{ post.body }}
+</div>
 <!-- <p>id: {{user2?.userId}} title: {{user2?.title}} completed:{{user2?.completed}}</p> -->
 <!-- <p>id: {{user?.userId}} title: {{user?.title}} completed:{{user.completed}}</p> -->
 <!-- <app-ornek></app-ornek> -->
@@ -41,5 +51,3 @@
 <app-second></app-second> -->
 <!-- <app-first-page></app-first-page>
 <app-second-page></app-second-page> -->
-
-
