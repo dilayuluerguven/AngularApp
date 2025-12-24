@@ -26,6 +26,7 @@ import { SayfaModule } from './projects/pages/sayfa.module';
 import { AdminModule } from './projects/admin-pages/admin.module';
 import { OrnekComponent } from './ornek/ornek.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ExaComponent } from './exa/exa.component';
 
 let isProd: boolean = false;
 @NgModule({
@@ -46,6 +47,7 @@ let isProd: boolean = false;
     FirstComponent,
     SecondComponent,
     OrnekComponent,
+    ExaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,PageModule,SayfaModule,AdminModule,HttpClientModule],
   providers: [
