@@ -24,6 +24,22 @@ export class JsonplaceholderService {
   constructor(private http: HttpClient) {}
   public currencyObservable=new BehaviorSubject("Türk lirası");
 
+
+  create(createPost:Post)
+  {
+    return this.http.post<Post>("https://jsonplaceholder.typicode.com/posts",createPost)
+  }
+    createPut(createPost:Post)
+  {
+    return this.http.put<Post>("https://jsonplaceholder.typicode.com/posts/2",createPost)
+  }
+   delete(createPost:Post)
+  {
+    return this.http.delete<any>("https://jsonplaceholder.typicode.com/posts/2",createPost)
+  }
+  
+
+
   setCurrency(value:any){
 
      this.currencyObservable.next(value);
