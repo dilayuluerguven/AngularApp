@@ -13,10 +13,10 @@ export class ExaComponent implements OnInit {
   constructor(private jsonplaceholder:JsonplaceholderService
   ){}
   ngOnInit(): void {
-      this.jsonplaceholder.getPost(500).subscribe({
+      this.jsonplaceholder.getPost(2).subscribe({
         // this.post=x;
-        next:(x)=>this.post=x,
-        error:(e:Error)=>console.warn(e.message),
+        next:(x)=>console.log(x.headers),//ne okumak istenirse
+        error:(e)=>console.warn(e),
         complete:()=>console.log("istek tamamlandı")
       })
   }
