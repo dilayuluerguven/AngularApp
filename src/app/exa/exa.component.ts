@@ -6,19 +6,17 @@ import { JsonplaceholderService } from '../services/jsonplaceholder.service';
 @Component({
   selector: 'app-exa',
   templateUrl: './exa.component.html',
-  styleUrls: ['./exa.component.css']
+  styleUrls: ['./exa.component.css'],
 })
 export class ExaComponent implements OnInit {
-  post:Post | undefined;
-  constructor(private jsonplaceholder:JsonplaceholderService
-  ){}
+  post: Post | undefined;
+  constructor(private jsonplaceholder: JsonplaceholderService) {}
   ngOnInit(): void {
-      this.jsonplaceholder.getPost(2).subscribe({
-        // this.post=x;
-        next:(x)=>this.post=x,//ne okumak istenirse
-        error:(e)=>console.warn(e),
-        complete:()=>console.log("istek tamamlandı")
-      })
+    this.jsonplaceholder.getPost(2).subscribe({
+      // this.post=x;
+      next: (x) => (this.post = x), //ne okumak istenirse
+      error: (e) => console.warn(e),
+      complete: () => console.log('istek tamamlandı'),
+    });
   }
-
 }
