@@ -15,7 +15,7 @@ export class ExaComponent implements OnInit {
   ngOnInit(): void {
       this.jsonplaceholder.getPost(2).subscribe({
         // this.post=x;
-        next:(x)=>console.log(x.headers),//ne okumak istenirse
+        next:(x)=>this.post=x,//ne okumak istenirse
         error:(e)=>console.warn(e),
         complete:()=>console.log("istek tamamlandı")
       })
