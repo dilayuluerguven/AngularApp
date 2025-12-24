@@ -1,4 +1,17 @@
-<h1>Ana component</h1>
+
+<select [formControl]="selectCurrency">
+  <option *ngFor="let item of currency" value="{{item}}">{{item}}</option>
+</select>
+<app-a>
+
+</app-a>
+<hr>
+<app-b></app-b>
+<router-outlet></router-outlet>
+
+
+
+<!-- <h1>Ana component</h1>
 <app-search></app-search>
 <div *ngIf="isLoading">
   <div class="d-flex justify-content-center">
@@ -7,19 +20,18 @@
     </div>
   </div>
 </div>
-<!-- <div class="alert alert-info" *ngFor="let post of postList">
+ <div class="alert alert-info" *ngFor="let post of postList">
   id: {{ post.id }} userId: {{ post.userId }} Title: {{ post.title }} body:
   {{ post.body }}
-</div> -->
+</div> 
 <div class="alert alert-info" *ngFor="let post of postList">
   post: {{ post }} 
 </div>
-<hr>
-<app-exa></app-exa>
+<hr>-->
+<!-- <app-exa></app-exa> -->
 <!-- <p>id: {{user2?.userId}} title: {{user2?.title}} completed:{{user2?.completed}}</p> -->
 <!-- <p>id: {{user?.userId}} title: {{user?.title}} completed:{{user.completed}}</p> -->
 <!-- <app-ornek></app-ornek> -->
-<router-outlet></router-outlet>
 
 <!-- <ul>
     <li><a routerLink="/home">Home</a></li>
@@ -56,4 +68,4 @@
 <!-- <app-first></app-first>
 <app-second></app-second> -->
 <!-- <app-first-page></app-first-page>
-<app-second-page></app-second-page> -->
+<app-second-page></app-second-page> --> 

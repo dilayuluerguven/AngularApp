@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../models/post';
 import {
+  BehaviorSubject,
   catchError,
   filter,
   from,
@@ -21,6 +22,12 @@ import {
 //page:3 pageSize:5 =>11,12,13,14,15 =>skip(10)
 export class JsonplaceholderService {
   constructor(private http: HttpClient) {}
+  public currencyObservable=new BehaviorSubject("Türk lirası");
+
+  setCurrency(value:any){
+
+     this.currencyObservable.next(value);
+  }
   getPostList(page: number, pageSize: number) {
     return this.http
       .get<Post[]>('https://jsonplaceholder.typicode.com/posts')

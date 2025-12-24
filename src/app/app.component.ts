@@ -23,6 +23,7 @@ import { User2 } from './models/user2';
 import { User3 } from './models/user3';
 import { Post } from './models/post';
 import { JsonplaceholderService } from './services/jsonplaceholder.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,9 @@ export class AppComponent implements OnInit {
   isLoading:boolean=true;
   // postList: Post[] = [];
   postList:string[]=[];
+  selectCurrency=new FormControl('Türk lirası')
+    currency:string[]=["Türk lirası","dolar"]
+
   title = 'angularapp';
   constructor(
     private jsonplaceholder: JsonplaceholderService
@@ -46,6 +50,10 @@ export class AppComponent implements OnInit {
       // this.user2=x;
       this.postList = x;
       this.isLoading=false;
+      this.selectCurrency.valueChanges.subscribe(x=>
+      {
+        this.jsonplaceholder.setCurrency(x);
+      })
     });
   }
   save(input: string) {
