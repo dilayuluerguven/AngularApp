@@ -9,28 +9,14 @@ import { MemberComponent } from './projects/admin-pages/member/member.component'
 import { RaporlarComponent } from './projects/admin-pages/raporlar/raporlar.component';
 import { LayoutComponent } from './projects/pages/layout/layout.component';
 import { AdminLayoutComponent } from './projects/admin-pages/admin-layout/admin-layout.component';
+import { AComponent } from './pages/a/a.component';
+import { BComponent } from './pages/b/b.component';
+import { ExresolverResolver } from './exresolver.resolver';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      { path: '', component: AnasayfaComponent },
-      { path: 'hakkimizda', component: HakkimizdaComponent },
-      { path: 'galeri', component: GaleriComponent },
-      { path: 'iletisim', component: IletisimComponent },
-    ],
-  },
-
-  {
-    path: 'admin',
-    component: AdminLayoutComponent,
-    children: [
-      { path: '', component: adminHomeComponent },
-      { path: 'uyeler', component: MemberComponent },
-      { path: 'raporlar', component: RaporlarComponent },
-    ],
-  },
+  { path: '', redirectTo: '/a', pathMatch: 'full' },
+  { path: 'a', component: AComponent },
+  { path: 'b', component: BComponent ,resolve:{postList:ExresolverResolver}},
 ];
 
 @NgModule({

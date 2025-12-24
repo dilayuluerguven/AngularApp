@@ -5,9 +5,11 @@ import { SecondPageComponent } from './second-page/second-page.component';
 import { PageserviceService } from './pageservice.service';
 import { PipepagePipe } from './pipepage.pipe';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AComponent } from './a/a.component';
+import { BComponent } from './b/b.component';
 
 @NgModule({
-  declarations: [FirstPageComponent, SecondPageComponent, PipepagePipe, HomePageComponent],
+  declarations: [FirstPageComponent, SecondPageComponent, PipepagePipe, HomePageComponent, AComponent, BComponent],
   imports: [
     CommonModule
   ],
