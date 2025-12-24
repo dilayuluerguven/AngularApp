@@ -29,6 +29,9 @@ import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ExaComponent } from './exa/exa.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { CustomErrorInterceptor } from './interceptor/custom-error.interceptor';
+import { SearchComponent } from './search/search.component';
+import { AComponent } from './shared/a/a.component';
+import { BComponent } from './shared/b/b.component';
 
 let isProd: boolean = false;
 @NgModule({
@@ -50,6 +53,9 @@ let isProd: boolean = false;
     SecondComponent,
     OrnekComponent,
     ExaComponent,
+    SearchComponent,
+    AComponent,
+    BComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule,PageModule,SayfaModule,AdminModule,HttpClientModule],
   providers: [
